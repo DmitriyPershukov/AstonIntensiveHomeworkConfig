@@ -1,4 +1,21 @@
 spring:
-    jpa:
-        hibernate:
-            ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://postgres:5432/users
+    username: DmitriyPershukov
+    password: '{cipher}AQAD1iIcSlCllypXGmqIGbqyrPPxQrGAemGs3Xv+Qqgww1k0ZMMLcr3WyjGYzZl8ExLB1ip5uGmTAvjU/ToqJcOegZhMUyTfqU8+zxXPBPzsh2qg1CqHQJUA9wPOUpjwtDZbsKpsDq34ZEfmo3vPeEUr3duFOgdqK3iKDASbd2/PYiUX2o85psCXmBNAhChHW46VwfjRGu0axSrCY3B0jGDgaWcSWz+u3vCoJxDLM8M7oqFkP/YDWL5WUESomtyBkUbi69kXorfOhwut4SdMqVLaRHEpjA7DJdXUDo2W+y+/FRWoIYE1UC5cTkHBPSw+nzwtB4+7QIjpDoWzbxv/zYBcMhgLjVhG2AYafXAZePif+6gBSCvGUAa56TPEYg33vsA='
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  kafka:
+    bootstrap-servers: kafka:9093
+    topic: users
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+server:
+  port: 8080
+
