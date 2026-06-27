@@ -28,5 +28,5 @@ resilience4j:
         slowCallRateThreshold: 3
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
-        minimumNumberOfCalls: 2
+        minimumNumberOfCalls: 10
 
