@@ -22,11 +22,13 @@ resilience4j:
   circuitbreaker:
     configs:
       default:
+        record-exceptions:
+            - java.sql.SQLTransientConnectionException
         slidingWindowSize: 10
         permittedNumberOfCallsInHalfOpenState: 10
         slowCallDurationThreshold: 3s
         slowCallRateThreshold: 3
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
-        minimumNumberOfCalls: 10
+        minimumNumberOfCalls: 4
 
